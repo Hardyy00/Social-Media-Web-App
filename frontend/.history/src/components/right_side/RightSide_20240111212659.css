@@ -1,0 +1,11 @@
+.right_side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav_icons {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+}

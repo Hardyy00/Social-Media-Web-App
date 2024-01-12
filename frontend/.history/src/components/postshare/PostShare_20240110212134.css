@@ -1,0 +1,13 @@
+.post_share {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--cardColor);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.post_share > img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}

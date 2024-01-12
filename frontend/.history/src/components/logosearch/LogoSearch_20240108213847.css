@@ -1,0 +1,11 @@
+.logosearch {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.search {
+  display: flex;
+  background-color: var(--inputColor);
+  border-radius: 10px;
+  padding: 5px;
+}

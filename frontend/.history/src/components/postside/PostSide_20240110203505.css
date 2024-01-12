@@ -1,0 +1,5 @@
+.post_side {
+  display: flex;
+  flex-direction: column;
+  gap: ;
+}

@@ -1,0 +1,6 @@
+.info_card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: var(--);
+}
