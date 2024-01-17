@@ -1,0 +1,9 @@
+.auth_page {
+  background-color: var(--cardColor);
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.7rem;
+}
