@@ -1,0 +1,26 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--cardColor);
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.container {
+  height: 20rem;
+  position: relative;
+}
+
+.container > img {
+  width: 100%;
+
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.post_react {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
