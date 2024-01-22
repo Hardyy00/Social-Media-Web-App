@@ -147,6 +147,7 @@ export const followAndUnfollowUser = (user, currentUserId, currentState) => {
     };
 
     const updatedUser = await request(user, currentUserId, currentState);
+    console.log(updatedUser);
     dispatch(authSlice.actions.updateAuthData(updatedUser));
   };
 };

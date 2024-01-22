@@ -13,9 +13,11 @@ export default function Posts() {
   let newPosts;
 
   if (params.id) {
-    newPosts = posts.filter((item) => item.userId === user._id);
+    newPosts = posts.map((item) => item.userId === user._id);
     posts = newPosts;
   }
+
+  console.log(posts);
 
   return (
     <div className="posts">

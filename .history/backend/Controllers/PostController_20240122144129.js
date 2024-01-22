@@ -82,22 +82,17 @@ const likePost = async (req, res) => {
     const user = await User.findById(userId);
 
     if (!post.likes.includes(userId)) {
-      const updatedPost = await Post.findByIdAndUpdate(
-        id,
-        { $push: { likes: userId } },
-        { new: true }
-      );
-      // await post.updateOne(, );
+      await post.updateOne({ $push: { likes: userId } }, { new: true });
+      console.log(post);
 
-      res.status(200).json(updatedPost);
+      res.status(200).json(post);
     } else {
-      const updatedPost = await Post.findByIdAndUpdate(
-        id,
+      const changedPost = await post.updateOne(
         { $pull: { likes: userId } },
         { new: true }
       );
 
-      res.status(200).json(updatedPost);
+      res.status(200).json(changedPost);
     }
   } catch (err) {
     res.status(500).json({ message: err.message });

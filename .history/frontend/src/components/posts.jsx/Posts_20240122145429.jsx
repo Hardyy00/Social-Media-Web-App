@@ -17,6 +17,8 @@ export default function Posts() {
     posts = newPosts;
   }
 
+  console.log(posts);
+
   return (
     <div className="posts">
       {posts.map((post) => {

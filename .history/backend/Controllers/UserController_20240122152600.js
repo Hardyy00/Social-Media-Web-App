@@ -112,7 +112,9 @@ const followUser = async (req, res) => {
           { new: true }
         );
 
-        res.status(200).json(updatedUser);
+        followingUser.updateOne();
+
+        res.status(200).json("User followed!");
       } else {
         res.status(403).json("User is already followed by you");
       }
@@ -139,15 +141,11 @@ const unfollowUser = async (req, res) => {
           $pull: { followers: currentUserId },
         });
 
-        const updatedUser = await User.findByIdAndUpdate(
-          currentUserId,
-          {
-            $pull: { followings: id },
-          },
-          { new: true }
-        );
+        await followingUser.updateOne({
+          $pull: { followings: id },
+        });
 
-        res.status(200).json(updatedUser);
+        res.status(200).json("User unfollowed.");
       } else {
         res.status(403).json({ message: "User is already Unfollowed" });
       }

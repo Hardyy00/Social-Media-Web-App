@@ -40,10 +40,7 @@ export default function Person({ user }) {
         </div>
       </div>
 
-      <button
-        className={`  ${follow ? "active" : "follow_btn btn"}`}
-        onClick={followHandler}
-      >
+      <button className="btn follow_btn" onClick={followHandler}>
         {follow ? "Unfollow" : "follow"}
       </button>
     </div>

@@ -46,10 +46,6 @@
 
 .active {
   background: transparent;
-  color: red;
-  font-weight: bold;
-  padding: 0.4rem 0.6rem;
-  border-radius: 13px;
-  border: 1px solid;
-  outline: none;
+  color: white;
+  padding: 1rem;
 }

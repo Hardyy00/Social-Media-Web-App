@@ -1,23 +1,20 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { followAndUnfollowUser } from "../../store/authSlice";
+import { useSelector } from "react-redux";
+import { authActions } from "../../store/authSlice";
 
 export default function Person({ user }) {
   const url = "http://localhost:8080/images/";
 
-  const dispatch = useDispatch();
-
   const mainUser = useSelector((state) => state.auth.authData);
 
-  const [follow, setFollow] = useState(mainUser.followings.includes(user._id));
+  const [follow, setFollow] = useState(mainUser.followers.includes(user._id));
 
-  // eslint-disable-next-line no-unused-vars
   const followHandler = (event) => {
-    dispatch(followAndUnfollowUser(user._id, mainUser._id, follow));
-
     setFollow((pre) => !pre);
+
+    dispatch(followAndUnfollowUser(user._id));
   };
 
   return (
@@ -40,10 +37,7 @@ export default function Person({ user }) {
         </div>
       </div>
 
-      <button
-        className={`  ${follow ? "active" : "follow_btn btn"}`}
-        onClick={followHandler}
-      >
+      <button className="btn follow_btn" onClick={followHandler}>
         {follow ? "Unfollow" : "follow"}
       </button>
     </div>

@@ -11,7 +11,7 @@ export default function Person({ user }) {
 
   const mainUser = useSelector((state) => state.auth.authData);
 
-  const [follow, setFollow] = useState(mainUser.followings.includes(user._id));
+  const [follow, setFollow] = useState(mainUser.followers.includes(user._id));
 
   // eslint-disable-next-line no-unused-vars
   const followHandler = (event) => {
@@ -40,10 +40,7 @@ export default function Person({ user }) {
         </div>
       </div>
 
-      <button
-        className={`  ${follow ? "active" : "follow_btn btn"}`}
-        onClick={followHandler}
-      >
+      <button className="btn follow_btn" onClick={followHandler}>
         {follow ? "Unfollow" : "follow"}
       </button>
     </div>

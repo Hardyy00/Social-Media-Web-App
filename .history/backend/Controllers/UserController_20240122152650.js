@@ -147,7 +147,7 @@ const unfollowUser = async (req, res) => {
           { new: true }
         );
 
-        res.status(200).json(updatedUser);
+        res.status(200).json("User unfollowed.");
       } else {
         res.status(403).json({ message: "User is already Unfollowed" });
       }

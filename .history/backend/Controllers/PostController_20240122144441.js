@@ -88,8 +88,9 @@ const likePost = async (req, res) => {
         { new: true }
       );
       // await post.updateOne(, );
+      console.log(updatedPost);
 
-      res.status(200).json(updatedPost);
+      res.status(200).json(po);
     } else {
       const updatedPost = await Post.findByIdAndUpdate(
         id,

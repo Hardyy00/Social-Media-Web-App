@@ -10,12 +10,11 @@ export default function Posts() {
 
   const user = useSelector((state) => state.auth.authData);
 
-  let newPosts;
-
   if (params.id) {
-    newPosts = posts.filter((item) => item.userId === user._id);
-    posts = newPosts;
+    posts = posts.map((item) => item.userId === user._id);
   }
+
+  console.log(posts);
 
   return (
     <div className="posts">

@@ -16,6 +16,7 @@ const authSlice = createSlice({
     },
 
     showError(state, action) {
+      console.log(action);
       state.error = action.payload.error;
     },
 
@@ -126,9 +127,9 @@ export function signUp(formData) {
 
 export const followAndUnfollowUser = (user, currentUserId, currentState) => {
   // eslint-disable-next-line no-unused-vars
-  return async (dispatch) => {
-    const request = async (user, currentUserId, currentState) => {
-      const data = await fetch(
+  return (dispatch) => {
+    const request = async (user, currentUserID, currentState) => {
+      await fetch(
         `http://localhost:8080/user/${user}/${
           currentState ? "unfollow" : "follow"
         }`,
@@ -140,14 +141,9 @@ export const followAndUnfollowUser = (user, currentUserId, currentState) => {
           body: JSON.stringify({ currentUserId }),
         }
       );
-
-      const resData = await data.json();
-
-      return resData;
     };
 
-    const updatedUser = await request(user, currentUserId, currentState);
-    dispatch(authSlice.actions.updateAuthData(updatedUser));
+    request(user, currentState);
   };
 };
 

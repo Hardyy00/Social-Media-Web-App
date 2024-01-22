@@ -31,7 +31,7 @@ export default function FollowersCard() {
 
   return (
     <div className="followers_card">
-      <h3>People you may want to follow</h3>
+      <h3>People You may want to follow</h3>
       {followers.map((person) => {
         if (person._id !== user._id) {
           return <Person key={person._id} user={person} />;
